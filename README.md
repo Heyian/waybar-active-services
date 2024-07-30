@@ -1,8 +1,8 @@
 # waybar-active-services
 
-![Screenshot](screenshot.png)
+Screenshot: ![Screenshot](screenshot.png)
 
-This project was made mainly to monitor is a backup is running on my system. It will show a *red* update icon on the [Waybar](https://github.com/Alexays/Waybar/) with the number of services (backups) that are running. The infotip will show the active services and it will open a list of all the watched services with their status if clicked.
+This project was made mainly to monitor if a backup is running on my system. It will show a *red* update icon on the [Waybar](https://github.com/Alexays/Waybar/) with the number of services (backups) that are running. The infotip will show the active services and it will open a list of all the watched services with their status if clicked.
 
 ## Requirements
 
@@ -15,8 +15,7 @@ This project was made mainly to monitor is a backup is running on my system. It 
 - Make the script executable. `sudo chmod +x {path_to_script}`
 - Edit the file and change the services to your own.
 
-**Note** I use foot as my terminal emulator, if you use something, change it on the `"on-click": "foot -e bash -c '~/.config/waybar/scripts/active_services.sh --details; read -p \"Press Enter to close...\"'",
-` line of the module configuration.
+**Note**: I use foot as my terminal emulator, if you use something else, change it on the `"on-click": "foot -e bash -c ...` line of the module configuration.
 
 ## Waybar Configuration
 
@@ -28,7 +27,7 @@ Add `"custom/active-services"` to your modules at the top of the config file. Ei
     "custom/active-services": {
         "exec": "~/.config/waybar/scripts/check_active_services.sh",
         "return-type": "json",
-        "interval": 5,
+        "interval": 15,
         "on-click": "foot -e bash -c '~/.config/waybar/scripts/check_active_services.sh --details; read -p \"Press Enter to close...\"'",
         "format": "{}",
     "tooltip":true,
